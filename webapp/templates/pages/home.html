@@ -1,0 +1,47 @@
+
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+
+{#<header>#}
+{#   <div class="container">#}
+{#        <div class="logo">#}
+{#                <img src="logo.png" alt="Children of Tomorrow">#}
+{#        </div>#}
+{#        <nav>#}
+{#            <ul>#}
+{#                <li><a href="#">Dashboard</a></li>#}
+{#                <li><a href="#">Orphan Information</a></li>#}
+{#                <li><a href="#">Adoption History</a></li>#}
+{#            </ul>#}
+{#        </nav>#}
+{#   </div>#}
+{#</header>#}
+
+    <!-- <main>
+        <div class="home-container">
+            <img src="{% static 'images/logo.png' %}">
+        </div>
+    </main> -->
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <!-- <h1 class="mx-auto my-0 text-uppercase">Orphanage</h1> -->
+                <br>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">"Every child deserves a loving home and a hopeful future. Join us in making a difference, one smile at a time."</h2>
+                {% if user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'AdminPanel' %}">Admin Panel</a>
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'LogPage' %}">Adopt Now!</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+  </header>
+
+
+{% endblock %}

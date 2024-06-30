@@ -1,0 +1,23 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+<div class="login-form">
+    <form action="{% url 'LogPage' %}" method="POST">
+        {% csrf_token %}
+        <h2 class="text-center">Log in Administrator</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Username" required="required" name="username">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" required="required" name="password">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

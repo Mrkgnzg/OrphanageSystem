@@ -1,0 +1,31 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+
+<div class="login-form">
+
+    <form action="{% url 'add-orphan' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="text-center">Add Orphan</h2>
+        <div class="form-group">
+            {{form.name}}
+        </div>
+        <div class="form-group">
+            {{form.age}}
+        </div>
+        <div class="form-group">
+            {{form.birthdate}}
+        </div>
+        <div class="form-group">
+            {{form.details}}
+        </div>
+        <div class="form-group">
+            {{form.photo}}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Add</button>
+            <a href="{% url 'OrphanPage' %}" class="btn btn-danger btn-block">back</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

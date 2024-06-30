@@ -1,0 +1,77 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+<div class="min-h-screen bg-zinc-100 dark:bg-zinc-900 p-4">
+  <div class="bg-red-600 text-white p-4 flex justify-between items-center">
+    <div class="flex items-center">
+      <button class="mr-4">
+        <img src="https://placehold.co/24x24" alt="menu" />
+      </button>
+      <h1 class="text-lg font-semibold">Child Profile and Adding a Child</h1>
+    </div>
+    <div>
+      <button class="bg-red-700 text-white py-1 px-3 rounded-lg mr-2">Save</button>
+      <button class="bg-red-700 text-white py-1 px-3 rounded-lg">Edit</button>
+    </div>
+  </div>
+  <div class="bg-red-100 dark:bg-red-800 p-6 mt-4 rounded-lg">
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/4 flex flex-col items-center mb-4 md:mb-0">
+        <img src="https://placehold.co/100x100" alt="Photo" class="rounded-full mb-2" />
+        <button class="bg-red-600 text-white py-1 px-3 rounded-lg">Photo</button>
+      </div>
+      <div class="w-full md:w-3/4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Child ID</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">First Name</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Last Name</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Middle Name</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Age</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Gender</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Birth Date</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Date of Arrival</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-zinc-700 dark:text-zinc-300">Disability</label>
+            <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <label class="block text-zinc-700 dark:text-zinc-300">About</label>
+      <textarea class="w-full p-2 border border-zinc-300 rounded-lg h-32"></textarea>
+    </div>
+    <div class="mt-4">
+      <label class="block text-zinc-700 dark:text-zinc-300">Status</label>
+      <input type="text" class="w-full p-2 border border-zinc-300 rounded-lg" />
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

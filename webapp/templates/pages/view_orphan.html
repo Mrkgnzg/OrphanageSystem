@@ -1,0 +1,21 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block content %}
+<a href="{% url 'OrphanPage' %}" class="btn btn-danger move">back</a>
+<div class="Orphan-wrapper">
+    <div class="photo">
+        <img src="{{orphan.photo.url}}" alt="">
+    </div>
+    <div class="orphan-details">
+        <br>
+        <h1>
+            Name: {{orphan.name}}  
+        </h1>
+        <br>
+        <p>Age: {{orphan.age}}</p>
+        <p>Birthdate: {{orphan.birthdate}}</p>
+        <p>Details: {{orphan.details}}</p>
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% include 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="team-boxed">
+        <div class="container">
+            <div class="intro text-center"> <!-- Added text-center class to center align content -->
+                <br>
+                <h2>ORPHAN LIST</h2>
+                {% if user.is_authenticated %}
+                <a href="{% url 'add-orphan' %}" class="btn btn-success">Add Orphan</a>
+                {% endif %}
+            </div>
+            <div class="row people">
+                {% for o in orphan %}
+                <div class="col-md-6 col-lg-4 item">     
+                    <div class="box"><a href="{% url 'view-orphan' o.id %}"><img src="{{o.photo.url}}" alt=""></a>
+                        <h3 class="name">{{ o.name }}</h3>
+                        <p class="title">{{o.age}}</p>
+                        <p class="description">{{o.birthdate}}</p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'edit-orphan' o.id %}" class="btn btn-info">Edit</a>
+                        <a href="{% url 'delete-orphan' o.id %}" class="btn btn-danger">Delete</a>
+                        {% endif %}
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}

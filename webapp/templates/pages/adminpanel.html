@@ -1,0 +1,47 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+    <body>
+    <div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2>Manage <b>Employees</b></h2>
+						</div>
+						<div class="col-xs-6">
+							<a href="{% url 'add-guardian' %}" class="btn btn-success" data-toggle="modal" data-placement="top" title="Add New Employee"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+						</div>
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Address</th>
+							<th>Phone</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for e in employee %}
+						<tr>
+							<td>{{e.name}}</td>
+							<td>{{e.email}}</td>
+							<td>{{e.Address}}</td>
+							<td>{{e.phone}}</td>
+							<td>
+								<a href="{% url 'edit-guardian' e.id %}" class="btn btn-info">Edit</a>
+								<a href="{% url 'delete-guardian' e.id %}" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </div>
+</body>
+{% endblock %}
